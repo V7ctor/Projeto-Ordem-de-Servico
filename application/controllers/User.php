@@ -8,7 +8,15 @@
 
         public function index() {
             $data = array(
-                "users"=>$this->ion_auth->users()->result()
+                "styles"=> array (
+                    'vendor/datatables/dataTables.bootstrap4.min.css'
+                ),
+                "scripts"=> array (
+                    'vendor/datatables/jquery.dataTables.min.js',
+                    'vendor/datatables/app.js'
+                ),
+                "users"=>$this->ion_auth->users()->result(),
+                "title"=>"Lista de Usuários"
             );
 
             $this->load->view("layout/header", $data);

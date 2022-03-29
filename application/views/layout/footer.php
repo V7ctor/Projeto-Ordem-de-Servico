@@ -2,7 +2,9 @@
  <footer class="sticky-footer bg-white">
      <div class="container my-auto">
          <div class="copyright text-center my-auto">
-             <span>Copyright &copy; Your Website 2020</span>
+             <span>Copyright &copy; Sistema Ordem de Serviço, <?php echo date('Y');?>.</span>
+             <br>
+             <span>Projeto somente com fins estudantís, <a href="https://github.com/V7ctor">João Victor Leite.</a></span>
          </div>
      </div>
  </footer>
@@ -47,7 +49,11 @@
 
  <!-- Custom scripts for all pages-->
  <script src="<?php echo base_url('public/js/sb-admin-2.min.js'); ?>"></script>
-
+ <?php if (isset($scripts)) :?>
+        <?php foreach($scripts as $script): ?>
+    <link href="<?php echo base_url('public/'.$script); ?>" rel="stylesheet">
+        <?php endforeach; ?>
+    <?php endif;?>
  </body>
 
  </html>
